@@ -1,0 +1,32 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Heading from "../components/Heading.astro";
+import Grid from "../components/Grid.astro";
+import { Code } from "astro/components";
+
+const code = `<Grid columns="3">
+    <Heading as="h1" level="1">Astro</Heading>
+    <Heading as="h1" level="1">Astro</Heading>
+    <Heading as="h1" level="1">Astro</Heading>
+    <Heading as="h1" level="1">Astro</Heading>
+    <Heading as="h1" level="1">Astro</Heading>
+    <Heading as="h1" level="1">Astro</Heading>
+    <Heading as="h1" level="1">Astro</Heading>
+</Grid>`;
+---
+
+<Layout title="Welcome to Astro.">
+  <main>
+    <Grid columns="3">
+      <Heading as="h2" level="3">Astro</Heading>
+      <Heading as="h2" level="3">Astro</Heading>
+      <Heading as="h2" level="3">Astro</Heading>
+      <Heading as="h2" level="3">Astro</Heading>
+      <Heading as="h2" level="3">Astro</Heading>
+      <Heading as="h2" level="3">Astro</Heading>
+      <Heading as="h2" level="3">Astro</Heading>
+    </Grid>
+
+    <Code code={code} lang="astro" wrap theme="github-dark" />
+  </main>
+</Layout>

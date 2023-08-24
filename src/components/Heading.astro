@@ -1,0 +1,48 @@
+---
+const { as: Tag, level } = Astro.props;
+
+// Add interface to Astro.props
+interface Props {
+  as: "h1" | "h2" | "h3" | "h4" | "h5";
+  level: "1" | "2" | "3" | "4" | "5";
+}
+---
+
+<Tag
+  class="heading"
+  data-level={level}
+  style={`--level: var(--level-${level})`}
+>
+  <slot />
+</Tag>
+
+<style>
+  .heading {
+    font-family: system-ui, sans-serif;
+    font-weight: bold;
+    font-size: var(--level);
+    margin: 0;
+  }
+
+  *::before {
+    font-size: var(--step--2);
+    color: #777;
+    vertical-align: middle;
+  }
+
+  h1:is(.prefix *)::before {
+    content: "h1 - ";
+  }
+  h2:is(.prefix *)::before {
+    content: "h2 - ";
+  }
+  h3:is(.prefix *)::before {
+    content: "h3 - ";
+  }
+  h4:is(.prefix *)::before {
+    content: "h4 - ";
+  }
+  h5:is(.prefix *)::before {
+    content: "h5 - ";
+  }
+</style>

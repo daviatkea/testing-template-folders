@@ -1,0 +1,27 @@
+:root {
+    --step-5: clamp(2.49rem, calc(2.16rem + 1.64vw), 3.43rem);
+    --step-4: clamp(2.07rem, calc(1.84rem + 1.17vw), 2.75rem);
+    --step-3: clamp(1.73rem, calc(1.56rem + 0.82vw), 2.20rem);
+    --step-2: clamp(1.44rem, calc(1.33rem + 0.55vw), 1.76rem);
+    --step-1: clamp(1.20rem, calc(1.13rem + 0.36vw), 1.41rem);
+    --step-0: clamp(1.00rem, calc(0.96rem + 0.22vw), 1.13rem);
+    --step--1: clamp(0.83rem, calc(0.81rem + 0.12vw), 0.90rem);
+    --step--2: clamp(0.69rem, calc(0.69rem + 0.04vw), 0.72rem);
+
+    --level-1: var(--step-5);
+    --level-2: var(--step-4);
+    --level-3: var(--step-3);
+    --level-4: var(--step-2);
+    --level-5: var(--step-1);
+    --level-6: var(--step-0);
+}
+
+* {
+    margin: 0;
+    box-sizing: border-box;
+    font-family: system-ui;
+}
+
+body {
+    padding: 2rem;
+}

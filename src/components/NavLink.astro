@@ -1,0 +1,32 @@
+---
+const { href, text } = Astro.props;
+
+const { pathname } = Astro.url;
+
+const isActive = href === "/" ? pathname === href : pathname.startsWith(href);
+
+// let isActive = false;
+// if (href === "/") {
+//   isActive = pathname === href;
+// } else {
+//   isActive = pathname.startsWith(href);
+// }
+---
+
+<li>
+  <a href={href} aria-current={isActive ? "page" : undefined}>{text}</a>
+</li>
+
+<style>
+  a {
+    color: #2b2b2b;
+    text-decoration: underline;
+    padding: 0.25rem 0.5rem;
+  }
+
+  [aria-current="page"] {
+    background-color: #2b2b2b;
+    color: white;
+    text-decoration: none;
+  }
+</style>

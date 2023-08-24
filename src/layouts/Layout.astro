@@ -1,0 +1,49 @@
+---
+import "../styles/global.css";
+import Heading from "../components/Heading.astro";
+import Button from "../components/Button.astro";
+import NavLink from "../components/NavLink.astro";
+import Nav from "../components/Nav.astro";
+const { title } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+  </head>
+  <body>
+    <header>
+      <Heading as="h1" level="1">Fleksible komponenter</Heading>
+      <Nav />
+    </header>
+    <slot />
+  </body>
+</html>
+
+<style>
+  header {
+    margin-bottom: 3rem;
+    padding: 1rem;
+    background: #ececec;
+  }
+</style>
+
+<style is:global>
+  main {
+    display: grid;
+    gap: 2rem;
+  }
+
+  pre {
+    padding: 1rem;
+    border-radius: 4px;
+    line-height: 1.6;
+    font-size: var(--step--1);
+    width: fit-content;
+  }
+</style>

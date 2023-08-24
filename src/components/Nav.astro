@@ -1,0 +1,25 @@
+---
+import NavLink from "./NavLink.astro";
+---
+
+<nav>
+  <ul>
+    <NavLink text="Titles" href="/titles" />
+    <NavLink text="Buttons" href="/buttons" />
+    <NavLink text="Grid" href="/grid" />
+  </ul>
+</nav>
+
+<style>
+  nav {
+    margin-block: 0.5rem 0;
+  }
+
+  ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    row-gap: 1ch;
+  }
+</style>
